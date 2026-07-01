@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Facebook, MapPin, Phone } from "lucide-react";
+import { site } from "@/lib/site";
 
 const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -46,6 +47,24 @@ export function Footer() {
               Premium and economy car rental — a clean, fully automatic fleet
               with instant booking, insurance included, and free airport pickup.
             </p>
+            <div className="mt-5 space-y-2 text-sm text-muted">
+              <a
+                href={site.maps.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 transition-colors hover:text-gold"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 flex-none text-gold" />
+                {site.address.full}
+              </a>
+              <a
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className="flex items-center gap-2 transition-colors hover:text-gold"
+              >
+                <Phone className="h-4 w-4 flex-none text-gold" />
+                {site.phone}
+              </a>
+            </div>
             <div className="mt-6 flex gap-3">
               {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
                 <a

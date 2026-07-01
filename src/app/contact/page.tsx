@@ -1,10 +1,11 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact/contact-form";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
+import { site } from "@/lib/site";
 
-const PHONE = "+30 000 000 0000";
-const EMAIL = "info@alhadana.com";
+const PHONE = site.phone;
+const EMAIL = site.email;
 
 export const metadata = {
   title: "Contact",
@@ -50,8 +51,9 @@ export default function ContactPage() {
             />
             <Channel
               icon={<MapPin className="h-5 w-5" />}
-              label="Pickup & delivery"
-              value="Airport & city — on request"
+              label="Visit us"
+              value={site.address.full}
+              href={site.maps.link}
             />
             <Channel
               icon={<Clock className="h-5 w-5" />}
@@ -62,6 +64,47 @@ export default function ContactPage() {
 
           {/* Form */}
           <ContactForm />
+        </section>
+
+        {/* Map + address */}
+        <section className="mx-auto mt-16 max-w-7xl px-5 sm:px-8">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-bg-elevated">
+            <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.28em] text-muted">
+                    Our location
+                  </p>
+                  <p className="mt-1 font-display text-lg font-bold leading-tight">
+                    {site.address.street}
+                  </p>
+                  <p className="text-sm text-muted">
+                    {site.address.city} {site.address.postalCode},{" "}
+                    {site.address.country}
+                  </p>
+                </div>
+              </div>
+              <a
+                href={site.maps.directions}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-gold-soft to-gold px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[#0a0a0a] shadow-[0_0_40px_-8px_rgba(212,175,55,0.6)] transition-all hover:shadow-[0_0_60px_-8px_rgba(212,175,55,0.85)]"
+              >
+                <Navigation className="h-4 w-4" /> Get directions
+              </a>
+            </div>
+            <iframe
+              title="Al Hadana location map"
+              src={site.maps.embed}
+              className="h-[420px] w-full border-0 grayscale-[0.2] contrast-110"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         </section>
       </main>
       <Footer />

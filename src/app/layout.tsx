@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { site } from "@/lib/site";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -65,7 +66,17 @@ const orgSchema = {
   name: "Al Hadana Company Ltd",
   description: DESCRIPTION,
   priceRange: "€€",
-  areaServed: "Worldwide",
+  telephone: site.phone,
+  email: site.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    postalCode: site.address.postalCode,
+    addressCountry: "CY",
+  },
+  areaServed: "Cyprus",
+  hasMap: site.maps.link,
 };
 
 export default function RootLayout({
