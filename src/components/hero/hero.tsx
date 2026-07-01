@@ -62,20 +62,7 @@ export function Hero() {
       aria-label="Hero"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
-        {/* 1. Blurred ambient backdrop — fills the frame, no black bars */}
-        <video
-          src="/hero/hero.mp4"
-          poster="/hero/hero-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden
-          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40 blur-2xl"
-        />
-
-        {/* 2. The full video, sharp and centered — nothing cropped */}
+        {/* Full-bleed video — covers the entire banner edge to edge */}
         <motion.div
           style={{ scale: reduced ? 1 : videoScale }}
           className="absolute inset-0 will-change-transform"
@@ -89,7 +76,7 @@ export function Hero() {
             playsInline
             preload="auto"
             aria-hidden
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </motion.div>
 
