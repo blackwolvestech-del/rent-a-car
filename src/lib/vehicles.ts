@@ -30,8 +30,8 @@ export function getVehicle(id: string): Vehicle | undefined {
   return vehicles.find((v) => v.id === id);
 }
 
-/** Gallery for the details page. Uses the single placeholder for now — swap in
- *  real photo angles per car later. */
+/** Gallery for the details page. One real photo per car for now — add more
+ *  angles per car (e.g. `/cars/<id>-2.webp`) to extend the thumbnail strip. */
 export function vehicleGallery(v: Vehicle): string[] {
   return [v.image];
 }
@@ -106,9 +106,9 @@ export function daysBetween(start: string, end: string): number {
 }
 
 /**
- * Al Hadana fleet — real vehicles and pricing. Images are branded SVG
- * placeholders in /public/cars until real car photos are supplied (drop a
- * `<id>.jpg` in /public/cars and update the `image` path).
+ * Al Hadana fleet — real vehicles and pricing. Images are real, model-matched
+ * WebP photos in /public/cars. To use your own studio photos, replace the
+ * matching `/cars/<id>.webp` file (keep the same filename).
  */
 export const vehicles: Vehicle[] = [
   {
@@ -123,7 +123,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 4,
     pricePerDay: 210,
-    image: "/cars/bmw-x6.svg",
+    image: "/cars/bmw-x6.webp",
     accent: "#3b82f6",
     tagline: "Bold coupé-SUV presence.",
     featured: true,
@@ -140,7 +140,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 4,
     pricePerDay: 180,
-    image: "/cars/bmw-x5.svg",
+    image: "/cars/bmw-x5.webp",
     accent: "#3b82f6",
     tagline: "Space, comfort, command.",
     featured: true,
@@ -157,7 +157,7 @@ export const vehicles: Vehicle[] = [
     doors: 2,
     luggage: 2,
     pricePerDay: 110,
-    image: "/cars/mercedes-eclass-cabrio.svg",
+    image: "/cars/mercedes-eclass-cabrio.webp",
     accent: "#d4af37",
     tagline: "Top down, spirits up.",
     featured: true,
@@ -174,7 +174,7 @@ export const vehicles: Vehicle[] = [
     doors: 4,
     luggage: 3,
     pricePerDay: 85,
-    image: "/cars/mercedes-eclass.svg",
+    image: "/cars/mercedes-eclass.webp",
     accent: "#9ca3af",
     tagline: "Executive comfort, refined.",
     featured: true,
@@ -191,7 +191,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 3,
     pricePerDay: 60,
-    image: "/cars/peugeot-3008.svg",
+    image: "/cars/peugeot-3008.webp",
     accent: "#1f6f54",
     tagline: "Stylish, practical crossover.",
     featured: true,
@@ -208,7 +208,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 2,
     pricePerDay: 40,
-    image: "/cars/vw-golf-7.svg",
+    image: "/cars/vw-golf-7.webp",
     accent: "#3b82f6",
     tagline: "The all-rounder benchmark.",
   },
@@ -224,7 +224,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 1,
     pricePerDay: 40,
-    image: "/cars/mazda-2.svg",
+    image: "/cars/mazda-2.webp",
     accent: "#d4252f",
     tagline: "Nimble and efficient.",
   },
@@ -240,7 +240,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 2,
     pricePerDay: 35,
-    image: "/cars/toyota-aqua.svg",
+    image: "/cars/toyota-aqua.webp",
     accent: "#22c55e",
     tagline: "Sip fuel, save more.",
   },
@@ -256,7 +256,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 2,
     pricePerDay: 35,
-    image: "/cars/nissan-note.svg",
+    image: "/cars/nissan-note.webp",
     accent: "#3b82f6",
     tagline: "Roomy, easy, economical.",
   },
@@ -272,7 +272,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 1,
     pricePerDay: 30,
-    image: "/cars/nissan-march.svg",
+    image: "/cars/nissan-march.webp",
     accent: "#9ca3af",
     tagline: "The city-friendly runabout.",
   },
@@ -288,7 +288,7 @@ export const vehicles: Vehicle[] = [
     doors: 5,
     luggage: 2,
     pricePerDay: 30,
-    image: "/cars/toyota-yaris.svg",
+    image: "/cars/toyota-yaris.webp",
     accent: "#d4252f",
     tagline: "Dependable and frugal.",
   },

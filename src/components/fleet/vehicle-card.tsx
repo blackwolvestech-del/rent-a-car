@@ -68,15 +68,18 @@ export function VehicleCard({
         <motion.div style={{ background: glow }} className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         {/* image */}
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#0e0e0e]">
+          {/* skeleton shimmer, revealed until the photo fades in */}
+          <div className="skeleton-shimmer absolute inset-0" aria-hidden />
           <Image
             src={vehicle.image}
             alt={`${vehicle.brand} ${vehicle.name}`}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+            onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
+            className="object-cover opacity-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
           <span className="absolute left-4 top-4 z-10 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-text backdrop-blur">
             {vehicle.category}
           </span>
