@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 import {
   Headphones,
   ShieldCheck,
-  Infinity as InfinityIcon,
-  Plane,
-  Crown,
-  Lock,
+  Award,
+  Clock,
+  BadgeCheck,
+  Leaf,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const FEATURES = [
-  { icon: Headphones, title: "24/7 Concierge", text: "A dedicated team on call around the clock, anywhere you drive." },
-  { icon: ShieldCheck, title: "Fully Insured", text: "Comprehensive cover on every booking, with zero hidden excess." },
-  { icon: InfinityIcon, title: "Unlimited Mileage", text: "No limits, no surcharges. The whole road is yours." },
-  { icon: Plane, title: "Airport Pickup", text: "Your car waiting at the terminal, the moment you land." },
-  { icon: Crown, title: "Luxury Fleet", text: "Only the latest models from the world's finest marques." },
-  { icon: Lock, title: "Secure Payments", text: "PCI-compliant checkout powered by Viva Payments." },
+  { icon: Headphones, title: "24/7 Support", text: "A dedicated helpdesk and rapid-response teams on call around the clock." },
+  { icon: ShieldCheck, title: "Fully Compliant", text: "Licensed, insured, and audited against strict HSE and statutory standards." },
+  { icon: Award, title: "ISO Certified", text: "Quality, environmental, and safety management certified end to end." },
+  { icon: Clock, title: "SLA-Driven", text: "Clear service levels, measured and reported — accountability you can see." },
+  { icon: BadgeCheck, title: "Trained Teams", text: "Screened, vetted, and continuously trained personnel across every trade." },
+  { icon: Leaf, title: "Sustainable", text: "Green processes and responsible waste built into every contract." },
 ];
 
 export function WhyChooseUs() {
@@ -25,8 +25,8 @@ export function WhyChooseUs() {
     <section id="why" className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
       <SectionHeading
         eyebrow="Why Al Hadana"
-        title="Engineered Around You"
-        description="The details others overlook are the standard we start from."
+        title="Standards others aspire to"
+        description="The details others overlook are the baseline we start from."
       />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

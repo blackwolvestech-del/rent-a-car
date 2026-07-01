@@ -2,11 +2,12 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { PHONE, EMAIL } from "@/lib/company";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Reach the Al Hadana concierge. 24/7 support, instant booking, delivery anywhere in Ireland and beyond.",
+    "Reach the Al Hadana team. 24/7 helpdesk, rapid response, and tailored facility-management proposals.",
 };
 
 export default function ContactPage() {
@@ -20,12 +21,13 @@ export default function ContactPage() {
               Get in touch
             </p>
             <h1 className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
-              <span className="text-gradient-light">A real person, </span>
-              <span className="text-gradient-gold">any hour.</span>
+              <span className="text-gradient-light">Let&apos;s talk about </span>
+              <span className="text-gradient-gold">your facility.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted">
-              Booking, delivery, mid-trip support — we&apos;re reachable around
-              the clock. Tell us what you need and we&apos;ll handle it.
+              Tell us what you operate and what you need. Our team responds
+              within one business day with a tailored proposal — or immediately
+              via our 24/7 helpdesk.
             </p>
           </div>
         </section>
@@ -35,25 +37,25 @@ export default function ContactPage() {
           <div className="grid h-fit gap-4">
             <Channel
               icon={<Phone className="h-5 w-5" />}
-              label="24/7 concierge"
-              value="+353 1 555 0142"
-              href="tel:+35315550142"
+              label="24/7 helpdesk"
+              value={PHONE}
+              href={`tel:${PHONE.replace(/\s/g, "")}`}
             />
             <Channel
               icon={<Mail className="h-5 w-5" />}
               label="Email"
-              value="concierge@alhadana.com"
-              href="mailto:concierge@alhadana.com"
+              value={EMAIL}
+              href={`mailto:${EMAIL}`}
             />
             <Channel
               icon={<MapPin className="h-5 w-5" />}
               label="Head office"
-              value="Dublin · Cork · Shannon"
+              value="Business Bay, Dubai, UAE"
             />
             <Channel
               icon={<Clock className="h-5 w-5" />}
-              label="Delivery hours"
-              value="By arrangement, day or night"
+              label="Response time"
+              value="Within one business day"
             />
           </div>
 

@@ -18,15 +18,15 @@ export function CTA() {
         <div className="absolute inset-0 bg-[radial-gradient(50%_80%_at_50%_0%,rgba(212,175,55,0.15),transparent)]" />
         <div className="relative">
           <h2 className="mx-auto max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
-            Your next drive deserves to be <span className="text-gradient-gold">extraordinary</span>.
+            Let&apos;s keep your world <span className="text-gradient-gold">running</span>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted">
-            Reserve in under two minutes. Instant confirmation, free cancellation up to 48 hours before pickup.
+            Tell us about your facility and we&apos;ll build a tailored proposal — clear scope, clear pricing, no obligation.
           </p>
           <div className="mt-10 flex justify-center">
-            <Link href="/fleet">
+            <Link href="/contact">
               <MagneticButton variant="gold" className="px-10 py-5 text-base">
-                Reserve Your Car <ArrowRight className="h-5 w-5" />
+                Request a Quote <ArrowRight className="h-5 w-5" />
               </MagneticButton>
             </Link>
           </div>

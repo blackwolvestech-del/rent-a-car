@@ -3,27 +3,28 @@ import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 
 const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "Fleet",
+    title: "Services",
     links: [
-      { label: "All vehicles", href: "/fleet" },
-      { label: "Sports", href: "/fleet?category=Sports" },
-      { label: "Luxury", href: "/fleet?category=Luxury" },
-      { label: "SUV", href: "/fleet?category=SUV" },
-      { label: "Electric", href: "/fleet?category=Electric" },
+      { label: "Facility Management", href: "/services/facility-management" },
+      { label: "Cleaning Services", href: "/services/cleaning-services" },
+      { label: "Pest Control", href: "/services/pest-control" },
+      { label: "Maintenance", href: "/services/maintenance" },
+      { label: "All services", href: "/services" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Industries", href: "/#industries" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Support",
     links: [
-      { label: "Contact", href: "/contact" },
-      { label: "Reviews", href: "/#reviews" },
+      { label: "Get a Quote", href: "/contact" },
+      { label: "24/7 Helpdesk", href: "/contact" },
     ],
   },
 ];
@@ -43,8 +44,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              The world&apos;s finest luxury, sports, and executive vehicles —
-              delivered to your door with concierge precision.
+              Integrated facility management, cleaning, maintenance and manpower
+              — one accountable partner for every building you operate.
             </p>
             <div className="mt-6 flex gap-3">
               {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
@@ -82,11 +83,11 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.07] pt-8 text-sm text-muted sm:flex-row">
-          <p>© {new Date().getFullYear()} Al Hadana Company LTD. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Al Hadana Company Ltd. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            Secured by <span className="font-semibold text-text">Viva Payments</span>
+            <span className="font-semibold text-text">ISO 9001 · 14001 · 45001</span>
             <span className="h-1 w-1 rounded-full bg-gold" />
-            PCI-DSS Compliant
+            Certified
           </p>
         </div>
       </div>

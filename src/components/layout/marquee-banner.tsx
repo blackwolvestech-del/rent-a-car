@@ -1,13 +1,14 @@
 "use client";
 
 const ITEMS = [
-  "Luxury Cars Available",
-  "Instant Booking",
-  "Airport Pickup",
-  "Premium Fleet",
-  "Fully Insured",
+  "Facility Management",
+  "Cleaning Services",
+  "Pest Control",
+  "Maintenance",
+  "Manpower Supply",
+  "Industrial Services",
+  "ISO Certified",
   "24/7 Support",
-  "No Hidden Charges",
 ];
 
 /**

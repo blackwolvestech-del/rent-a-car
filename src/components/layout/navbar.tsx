@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
 const LINKS = [
-  { label: "Fleet", href: "/fleet" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/#reviews" },
+  { label: "Services", href: "/services" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -87,14 +88,14 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+35315550142"
+            href="tel:+97140000000"
             className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-gold"
           >
             <Phone className="h-4 w-4" /> 24/7
           </a>
-          <Link href="/fleet">
+          <Link href="/contact">
             <MagneticButton variant="gold" className="px-6 py-3 text-xs">
-              Book Now
+              Get a Quote
             </MagneticButton>
           </Link>
         </div>
@@ -132,9 +133,9 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <Link href="/fleet" onClick={() => setOpen(false)}>
+            <Link href="/contact" onClick={() => setOpen(false)}>
               <MagneticButton variant="gold" className="mt-6 w-full">
-                Book Now
+                Get a Quote
               </MagneticButton>
             </Link>
           </motion.div>

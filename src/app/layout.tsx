@@ -17,9 +17,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE = "Al Hadana Company LTD — Luxury Car Rental";
+const SITE = "Al Hadana Company Ltd — Integrated Facility Management";
 const DESCRIPTION =
-  "Choose from the world's finest luxury, sports, and executive vehicles with instant online booking. Airport pickup, fully insured, 24/7 concierge.";
+  "Al Hadana Company Ltd delivers integrated facility management, cleaning, pest control, maintenance, construction support, manpower supply, and industrial & environmental services. One accountable partner for every building you operate.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alhadana.com"),
@@ -29,20 +29,21 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "luxury car rental",
-    "sports car hire",
-    "exotic car rental",
-    "Ferrari rental",
-    "Lamborghini rental",
-    "chauffeur",
-    "airport pickup",
+    "facility management",
+    "cleaning services",
+    "pest control",
+    "building maintenance",
+    "manpower supply",
+    "industrial services",
+    "environmental solutions",
+    "construction support",
   ],
   openGraph: {
     title: SITE,
     description: DESCRIPTION,
     type: "website",
-    locale: "en_IE",
-    siteName: "Al Hadana Company LTD",
+    locale: "en",
+    siteName: "Al Hadana Company Ltd",
   },
   twitter: {
     card: "summary_large_image",
@@ -60,10 +61,9 @@ export const viewport: Viewport = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoRental",
-  name: "Al Hadana Company LTD",
+  "@type": "Organization",
+  name: "Al Hadana Company Ltd",
   description: DESCRIPTION,
-  priceRange: "€€€€",
   areaServed: "Worldwide",
 };
 
