@@ -5,15 +5,30 @@ import { Stats } from "@/components/sections/stats";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { Sparkles } from "lucide-react";
 
-import { coreValues } from "@/lib/company";
-
 export const metadata = {
   title: "About",
   description:
-    "Al Hadana Company Ltd — an integrated facility-management partner built on integrity, excellence, safety, and sustainability.",
+    "Al Hadana Company Ltd — straightforward car rental with a clean automatic fleet, transparent pricing, and genuine 24/7 support.",
 };
 
-const PILLARS = coreValues.map((v) => ({ title: v.title, body: v.body }));
+const PILLARS = [
+  {
+    title: "Transparent pricing",
+    body: "The price you see is the price you pay. No hidden fees, no airport surcharges, no fuel tricks.",
+  },
+  {
+    title: "A fleet you can trust",
+    body: "Every car is regularly serviced, spotless, and fully automatic — ready the moment you are.",
+  },
+  {
+    title: "Insurance included",
+    body: "Comprehensive cover comes standard on every rental, with a zero-excess upgrade available.",
+  },
+  {
+    title: "Real 24/7 support",
+    body: "A real person on the line whenever you need us — before, during, and after your trip.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -27,14 +42,14 @@ export default function AboutPage() {
             About Al Hadana
           </span>
           <h1 className="mt-7 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
-            <span className="text-gradient-light">Built to keep </span>
-            <span className="text-gradient-gold">operations running.</span>
+            <span className="text-gradient-light">Car rental, </span>
+            <span className="text-gradient-gold">without the hassle.</span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-            Al Hadana Company Ltd is an integrated facility-management partner.
-            For nearly two decades we&apos;ve kept buildings clean, safe, and
-            fully operational — combining trained people, disciplined processes,
-            and modern systems under one accountable relationship.
+            Al Hadana Company Ltd makes renting a car simple and honest. A clean,
+            fully automatic fleet — from economy runabouts to premium SUVs and
+            convertibles — with transparent pricing, insurance included, and a
+            team that actually answers the phone.
           </p>
         </section>
 
@@ -43,31 +58,30 @@ export default function AboutPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <article className="rounded-3xl border border-white/[0.07] bg-bg-elevated p-8">
               <h2 className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-                Our mission
+                What we promise
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-white/80">
-                To deliver facility services so reliable our clients never have
-                to think about them — freeing them to focus entirely on their
-                core business.
+                A well-maintained car, ready when you are, at a price with no
+                surprises — booked in minutes and delivered where you need it.
               </p>
             </article>
             <article className="rounded-3xl border border-white/[0.07] bg-bg-elevated p-8">
               <h2 className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-                Our vision
+                Who we serve
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-white/80">
-                To be the region&apos;s most trusted facility-management partner
-                — the standard against which quality, safety, and sustainability
-                are measured.
+                Visitors, business travellers, and locals alike — anyone who
+                wants a dependable automatic car and a rental process that just
+                works.
               </p>
             </article>
           </div>
         </section>
 
-        {/* Core values */}
+        {/* Values */}
         <section className="mx-auto mt-14 max-w-7xl px-5 sm:px-8">
           <h2 className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-            Core values
+            What sets us apart
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((p) => (
@@ -91,17 +105,16 @@ export default function AboutPage() {
         <section className="mx-auto mt-12 max-w-7xl px-5 sm:px-8">
           <div className="rounded-3xl border border-gold/30 bg-gradient-to-br from-gold/[0.05] to-transparent p-10 text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Let&apos;s work together.
+              Ready to hit the road?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-balance text-sm text-muted">
-              Tell us about your facility and we&apos;ll build a tailored
-              proposal.
+              Browse the fleet, pick your dates, and book in minutes.
             </p>
             <Link
-              href="/contact"
+              href="/fleet"
               className="mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-gold-soft to-gold px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0a0a0a] shadow-[0_0_40px_-8px_rgba(212,175,55,0.6)] transition-all hover:shadow-[0_0_60px_-8px_rgba(212,175,55,0.85)]"
             >
-              Request a Quote
+              Browse the Fleet
             </Link>
           </div>
         </section>

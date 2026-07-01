@@ -3,28 +3,27 @@ import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 
 const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "Services",
+    title: "Fleet",
     links: [
-      { label: "Facility Management", href: "/services/facility-management" },
-      { label: "Cleaning Services", href: "/services/cleaning-services" },
-      { label: "Pest Control", href: "/services/pest-control" },
-      { label: "Maintenance", href: "/services/maintenance" },
-      { label: "All services", href: "/services" },
+      { label: "All cars", href: "/fleet" },
+      { label: "Economy", href: "/fleet?category=Economy" },
+      { label: "SUV", href: "/fleet?category=SUV" },
+      { label: "Convertible", href: "/fleet?category=Convertible" },
+      { label: "Hybrid", href: "/fleet?category=Hybrid" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Industries", href: "/#industries" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Support",
     links: [
-      { label: "Get a Quote", href: "/contact" },
-      { label: "24/7 Helpdesk", href: "/contact" },
+      { label: "Book Now", href: "/fleet" },
+      { label: "24/7 Support", href: "/contact" },
     ],
   },
 ];
@@ -44,8 +43,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Integrated facility management, cleaning, maintenance and manpower
-              — one accountable partner for every building you operate.
+              Premium and economy car rental — a clean, fully automatic fleet
+              with instant booking, insurance included, and free airport pickup.
             </p>
             <div className="mt-6 flex gap-3">
               {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
@@ -85,9 +84,9 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.07] pt-8 text-sm text-muted sm:flex-row">
           <p>© {new Date().getFullYear()} Al Hadana Company Ltd. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            <span className="font-semibold text-text">ISO 9001 · 14001 · 45001</span>
+            <span className="font-semibold text-text">All cars automatic</span>
             <span className="h-1 w-1 rounded-full bg-gold" />
-            Certified
+            Fully insured
           </p>
         </div>
       </div>

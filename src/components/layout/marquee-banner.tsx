@@ -1,14 +1,14 @@
 "use client";
 
 const ITEMS = [
-  "Facility Management",
-  "Cleaning Services",
-  "Pest Control",
-  "Maintenance",
-  "Manpower Supply",
-  "Industrial Services",
-  "ISO Certified",
+  "Instant Booking",
+  "All Automatic",
+  "Airport Pickup",
+  "Insurance Included",
+  "Unlimited Mileage",
   "24/7 Support",
+  "No Hidden Charges",
+  "Economy to Premium",
 ];
 
 /**

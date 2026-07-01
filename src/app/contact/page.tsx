@@ -2,12 +2,14 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { PHONE, EMAIL } from "@/lib/company";
+
+const PHONE = "+30 000 000 0000";
+const EMAIL = "info@alhadana.com";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Reach the Al Hadana team. 24/7 helpdesk, rapid response, and tailored facility-management proposals.",
+    "Reach the Al Hadana team to book a car or ask a question. 24/7 support, instant booking, free airport pickup.",
 };
 
 export default function ContactPage() {
@@ -21,13 +23,12 @@ export default function ContactPage() {
               Get in touch
             </p>
             <h1 className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
-              <span className="text-gradient-light">Let&apos;s talk about </span>
-              <span className="text-gradient-gold">your facility.</span>
+              <span className="text-gradient-light">Book a car or </span>
+              <span className="text-gradient-gold">ask us anything.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted">
-              Tell us what you operate and what you need. Our team responds
-              within one business day with a tailored proposal — or immediately
-              via our 24/7 helpdesk.
+              Questions about a car, your dates, or delivery? Message us and
+              we&apos;ll reply fast — or call any time, day or night.
             </p>
           </div>
         </section>
@@ -37,7 +38,7 @@ export default function ContactPage() {
           <div className="grid h-fit gap-4">
             <Channel
               icon={<Phone className="h-5 w-5" />}
-              label="24/7 helpdesk"
+              label="24/7 phone"
               value={PHONE}
               href={`tel:${PHONE.replace(/\s/g, "")}`}
             />
@@ -49,13 +50,13 @@ export default function ContactPage() {
             />
             <Channel
               icon={<MapPin className="h-5 w-5" />}
-              label="Head office"
-              value="Business Bay, Dubai, UAE"
+              label="Pickup & delivery"
+              value="Airport & city — on request"
             />
             <Channel
               icon={<Clock className="h-5 w-5" />}
-              label="Response time"
-              value="Within one business day"
+              label="Opening hours"
+              value="Every day, around the clock"
             />
           </div>
 

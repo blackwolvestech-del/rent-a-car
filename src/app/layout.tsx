@@ -17,9 +17,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE = "Al Hadana Company Ltd — Integrated Facility Management";
+const SITE = "Al Hadana Company Ltd — Car Rental";
 const DESCRIPTION =
-  "Al Hadana Company Ltd delivers integrated facility management, cleaning, pest control, maintenance, construction support, manpower supply, and industrial & environmental services. One accountable partner for every building you operate.";
+  "Rent premium and economy cars from Al Hadana — a clean, fully automatic fleet from €30/day. Instant online booking, insurance included, unlimited mileage, and free airport pickup.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alhadana.com"),
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "facility management",
-    "cleaning services",
-    "pest control",
-    "building maintenance",
-    "manpower supply",
-    "industrial services",
-    "environmental solutions",
-    "construction support",
+    "car rental",
+    "rent a car",
+    "automatic car hire",
+    "airport car rental",
+    "economy car rental",
+    "SUV rental",
+    "convertible rental",
+    "cheap car hire",
   ],
   openGraph: {
     title: SITE,
@@ -61,9 +61,10 @@ export const viewport: Viewport = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "AutoRental",
   name: "Al Hadana Company Ltd",
   description: DESCRIPTION,
+  priceRange: "€€",
   areaServed: "Worldwide",
 };
 

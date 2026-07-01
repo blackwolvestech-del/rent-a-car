@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/hero/hero";
-import { ServicesSection } from "@/components/sections/services-section";
-import { IndustriesSection } from "@/components/sections/industries-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
+import { BookingWidget } from "@/components/booking/booking-widget";
+import { FleetSection } from "@/components/fleet/fleet-section";
+import { FeaturedCarousel } from "@/components/sections/featured-carousel";
 import { Stats } from "@/components/sections/stats";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <main className="relative">
         <Hero />
-        <ServicesSection />
-        <IndustriesSection />
-        <ProjectsSection />
+        <BookingWidget />
+        <FleetSection />
+        <FeaturedCarousel />
         <Stats />
         <WhyChooseUs />
         <Testimonials />

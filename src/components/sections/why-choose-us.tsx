@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 import {
   Headphones,
   ShieldCheck,
-  Award,
-  Clock,
-  BadgeCheck,
-  Leaf,
+  Infinity as InfinityIcon,
+  Plane,
+  Cog,
+  Tag,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const FEATURES = [
-  { icon: Headphones, title: "24/7 Support", text: "A dedicated helpdesk and rapid-response teams on call around the clock." },
-  { icon: ShieldCheck, title: "Fully Compliant", text: "Licensed, insured, and audited against strict HSE and statutory standards." },
-  { icon: Award, title: "ISO Certified", text: "Quality, environmental, and safety management certified end to end." },
-  { icon: Clock, title: "SLA-Driven", text: "Clear service levels, measured and reported — accountability you can see." },
-  { icon: BadgeCheck, title: "Trained Teams", text: "Screened, vetted, and continuously trained personnel across every trade." },
-  { icon: Leaf, title: "Sustainable", text: "Green processes and responsible waste built into every contract." },
+  { icon: Headphones, title: "24/7 Support", text: "A real person on the line whenever you need us — before, during, and after your rental." },
+  { icon: ShieldCheck, title: "Insurance Included", text: "Comprehensive cover on every booking, with a zero-excess upgrade available." },
+  { icon: InfinityIcon, title: "Unlimited Mileage", text: "No per-kilometre charges. Drive as far as the road takes you." },
+  { icon: Plane, title: "Airport Pickup", text: "Your car waiting at the terminal, or delivered wherever you need it." },
+  { icon: Cog, title: "All Automatic", text: "Every car in the fleet is automatic — easy, comfortable, stress-free driving." },
+  { icon: Tag, title: "No Hidden Charges", text: "The price you see is the price you pay. Transparent, to the cent." },
 ];
 
 export function WhyChooseUs() {
@@ -25,8 +25,8 @@ export function WhyChooseUs() {
     <section id="why" className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
       <SectionHeading
         eyebrow="Why Al Hadana"
-        title="Standards others aspire to"
-        description="The details others overlook are the baseline we start from."
+        title="Renting made effortless"
+        description="The details others overlook are the standard we start from."
       />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { stats as STATS } from "@/lib/company";
+
+const STATS = [
+  { value: 11, suffix: "", label: "Cars Available" },
+  { value: 100, suffix: "%", label: "Automatic" },
+  { value: 24, suffix: "/7", label: "Support" },
+  { value: 0, suffix: "€", label: "Hidden Fees" },
+];
 
 export function Stats() {
   const ref = useRef(null);

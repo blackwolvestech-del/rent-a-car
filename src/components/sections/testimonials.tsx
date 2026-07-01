@@ -4,7 +4,33 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { testimonials as REVIEWS } from "@/lib/company";
+
+const REVIEWS = [
+  {
+    name: "Yannis P.",
+    role: "Weekend trip",
+    initials: "YP",
+    text: "Booked the Peugeot 3008 for a family weekend. Spotless car, delivered to the airport on time, and the price was exactly what I saw online. Zero surprises.",
+  },
+  {
+    name: "Elena K.",
+    role: "Business rental",
+    initials: "EK",
+    text: "The E-Class was perfect for client meetings — comfortable, immaculate, fully automatic. Pickup and return took two minutes each.",
+  },
+  {
+    name: "Marco D.",
+    role: "Summer holiday",
+    initials: "MD",
+    text: "Took the E-Class Cabrio along the coast. Best decision of the trip. Insurance was included and the team answered every call instantly.",
+  },
+  {
+    name: "Sofia R.",
+    role: "City rental",
+    initials: "SR",
+    text: "Needed something cheap and easy for a week in the city. The Yaris was ideal — economical, automatic, and effortless to park.",
+  },
+];
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -20,7 +46,7 @@ export function Testimonials() {
 
   return (
     <section id="reviews" className="mx-auto max-w-5xl px-5 py-28 sm:px-8">
-      <SectionHeading eyebrow="Testimonials" title="Trusted by operations leaders" />
+      <SectionHeading eyebrow="Testimonials" title="What our drivers say" />
 
       <div
         className="relative"

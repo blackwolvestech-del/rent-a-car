@@ -118,34 +118,34 @@ export function Hero() {
         >
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/30 px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.28em] text-white/80 backdrop-blur-md animate-[fadeUp_1.2s_cubic-bezier(0.16,1,0.3,1)_both]">
             <Sparkles className="h-3.5 w-3.5 text-gold" />
-            Integrated facility management
+            Premium & economy car rental
           </div>
 
           <h1
             className="font-display text-[clamp(2.6rem,8vw,7.5rem)] font-bold leading-[0.92] tracking-[-0.02em] animate-[fadeUp_1.4s_cubic-bezier(0.16,1,0.3,1)_0.15s_both]"
             style={{ textShadow: "0 4px 60px rgba(0,0,0,0.7)" }}
           >
-            <span className="block text-gradient-light">We keep your world</span>
-            <span className="block text-gradient-gold">running.</span>
+            <span className="block text-gradient-light">Rent the drive.</span>
+            <span className="block text-gradient-gold">Own the road.</span>
           </h1>
 
           <p
             className="mt-8 max-w-xl text-balance text-base leading-relaxed text-white/75 sm:text-lg animate-[fadeUp_1.2s_cubic-bezier(0.16,1,0.3,1)_0.45s_both]"
             style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8)" }}
           >
-            Al Hadana Company Ltd delivers integrated facility management,
-            cleaning, maintenance and manpower — one accountable partner for
-            every building you operate.
+            From economy runabouts to premium SUVs — a clean, fully automatic
+            fleet from Al Hadana, with instant booking, insurance included, and
+            free airport pickup.
           </p>
 
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row animate-[fadeUp_1.2s_cubic-bezier(0.16,1,0.3,1)_0.6s_both]">
-            <Link href="/contact">
+            <Link href="/fleet">
               <MagneticButton variant="gold">
-                Request a Quote <ChevronRight className="h-4 w-4" />
+                Book Now <ChevronRight className="h-4 w-4" />
               </MagneticButton>
             </Link>
-            <Link href="/services">
-              <MagneticButton variant="outline">Our Services</MagneticButton>
+            <Link href="/fleet">
+              <MagneticButton variant="outline">Explore Fleet</MagneticButton>
             </Link>
           </div>
         </motion.div>
