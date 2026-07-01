@@ -241,6 +241,120 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+export type ProjectCategory =
+  | "Commercial"
+  | "Residential"
+  | "Industrial"
+  | "Hospitality"
+  | "Healthcare";
+
+export interface Project {
+  title: string;
+  category: ProjectCategory;
+  location: string;
+  summary: string;
+  image: string;
+  /** Optional before/after pair for the comparison slider. */
+  before?: string;
+  after?: string;
+  /** Masonry emphasis — "tall" spans two rows, "wide" spans two columns. */
+  span?: "tall" | "wide" | "normal";
+}
+
+export const projectCategories: (ProjectCategory | "All")[] = [
+  "All",
+  "Commercial",
+  "Residential",
+  "Industrial",
+  "Hospitality",
+  "Healthcare",
+];
+
+export const projects: Project[] = [
+  {
+    title: "Grade-A Office Tower",
+    category: "Commercial",
+    location: "Business Bay, Dubai",
+    summary:
+      "Integrated FM across 42 floors — cleaning, MEP maintenance, and 24/7 helpdesk under a single SLA.",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    span: "tall",
+  },
+  {
+    title: "Luxury Residential Community",
+    category: "Residential",
+    location: "Palm District",
+    summary:
+      "Common-area cleaning, landscaping support, and pest control for 900+ units.",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+    before:
+      "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&w=1200&q=80",
+    after:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Manufacturing Plant",
+    category: "Industrial",
+    location: "Industrial Zone 3",
+    summary:
+      "High-pressure cleaning, duct maintenance, and shutdown support to strict HSE standards.",
+    image:
+      "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+    span: "wide",
+  },
+  {
+    title: "Five-Star Resort",
+    category: "Hospitality",
+    location: "Marina Waterfront",
+    summary:
+      "Round-the-clock housekeeping support and specialist facade cleaning across the property.",
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Private Hospital",
+    category: "Healthcare",
+    location: "Medical City",
+    summary:
+      "Infection-control cleaning, waste management, and compliant environmental services.",
+    image:
+      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Corporate Headquarters",
+    category: "Commercial",
+    location: "Financial District",
+    summary:
+      "Soft-services package with daily janitorial teams and planned preventive maintenance.",
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Logistics Warehouse",
+    category: "Industrial",
+    location: "Distribution Hub",
+    summary:
+      "Floor care, high-level cleaning, and manpower supply for a 60,000 m² facility.",
+    image:
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Boutique Hotel Refurbishment",
+    category: "Hospitality",
+    location: "Old Town",
+    summary:
+      "Post-construction deep clean and handover before a full re-opening.",
+    image:
+      "https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=1200&q=80",
+    before:
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
+    after:
+      "https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
 export const WHATSAPP = "+9710000000000";
 export const PHONE = "+971 4 000 0000";
 export const EMAIL = "info@alhadana.com";
