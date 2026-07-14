@@ -24,6 +24,7 @@ import {
   vehicles,
 } from "@/lib/vehicles";
 import { formatCurrency } from "@/lib/utils";
+import { VAT_RATE } from "@/lib/site";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
 /**
@@ -43,7 +44,7 @@ export function VehicleDetail({ vehicle }: { vehicle: Vehicle }) {
   const [dropoff, setDropoff] = useState(toISO(threeDaysOut));
   const days = daysBetween(pickup, dropoff);
   const subtotal = days * vehicle.pricePerDay;
-  const tax = Math.round(subtotal * 0.13);
+  const tax = Math.round(subtotal * VAT_RATE);
   const total = subtotal + tax;
 
   const similar = vehicles
@@ -200,8 +201,8 @@ export function VehicleDetail({ vehicle }: { vehicle: Vehicle }) {
                 body="25 years with a valid driving licence held for over 2 years."
               />
               <PolicyCard
-                title="Deposit"
-                body="A refundable hold of €5,000 is placed at pickup and released on safe return."
+                title="Documents"
+                body="Passport, driving licence, and ID card are required at pickup."
               />
               <PolicyCard
                 title="Cancellation"
@@ -252,8 +253,7 @@ export function VehicleDetail({ vehicle }: { vehicle: Vehicle }) {
                 k={`${formatCurrency(vehicle.pricePerDay)} × ${days} day${days === 1 ? "" : "s"}`}
                 v={formatCurrency(subtotal)}
               />
-              <Row k="VAT (13%)" v={formatCurrency(tax)} />
-              <Row k="Refundable deposit" v={formatCurrency(5000)} muted />
+              <Row k="VAT (19%)" v={formatCurrency(tax)} />
               <div className="mt-4 flex items-center justify-between border-t border-white/[0.07] pt-4">
                 <span className="text-xs uppercase tracking-[0.22em] text-muted">
                   Total

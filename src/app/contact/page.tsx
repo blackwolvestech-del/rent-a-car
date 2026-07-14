@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact/contact-form";
-import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Navigation, Instagram } from "lucide-react";
 import { site } from "@/lib/site";
 
 const PHONE = site.phone;
@@ -54,6 +54,12 @@ export default function ContactPage() {
               label="Visit us"
               value={site.address.full}
               href={site.maps.link}
+            />
+            <Channel
+              icon={<Instagram className="h-5 w-5" />}
+              label="Instagram"
+              value="@carrentalhadana"
+              href={site.instagram}
             />
             <Channel
               icon={<Clock className="h-5 w-5" />}

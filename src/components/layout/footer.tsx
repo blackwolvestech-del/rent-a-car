@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Twitter, Linkedin, Facebook, MapPin, Phone } from "lucide-react";
+import { Instagram, MapPin, Phone, Mail } from "lucide-react";
 import { site } from "@/lib/site";
 
 const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
@@ -64,18 +64,24 @@ export function Footer() {
                 <Phone className="h-4 w-4 flex-none text-gold" />
                 {site.phone}
               </a>
+              <a
+                href={`mailto:${site.email}`}
+                className="flex items-center gap-2 transition-colors hover:text-gold"
+              >
+                <Mail className="h-4 w-4 flex-none text-gold" />
+                {site.email}
+              </a>
             </div>
             <div className="mt-6 flex gap-3">
-              {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:border-gold hover:text-gold"
-                  aria-label="Social link"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:border-gold hover:text-gold"
+                aria-label="Al Hadana on Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
 

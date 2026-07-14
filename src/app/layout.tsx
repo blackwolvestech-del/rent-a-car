@@ -75,7 +75,16 @@ const orgSchema = {
     postalCode: site.address.postalCode,
     addressCountry: "CY",
   },
-  areaServed: "Cyprus",
+  areaServed: [
+    "Larnaca",
+    "Larnaca Airport",
+    "Nicosia",
+    "Paphos",
+    "Ayia Napa",
+    "Limassol",
+    "Cyprus",
+  ],
+  sameAs: [site.instagram],
   hasMap: site.maps.link,
 };
 

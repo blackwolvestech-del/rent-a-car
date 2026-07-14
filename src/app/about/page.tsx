@@ -8,25 +8,25 @@ import { Sparkles } from "lucide-react";
 export const metadata = {
   title: "About",
   description:
-    "Al Hadana Company Ltd — straightforward car rental with a clean automatic fleet, transparent pricing, and genuine 24/7 support.",
+    "Al Hadana Company Ltd — your local car rental company at Larnaca Airport & City, Nicosia, Paphos, Ayia Napa & Limassol. Quality vehicles and a friendly, dedicated team.",
 };
 
 const PILLARS = [
   {
-    title: "Transparent pricing",
-    body: "The price you see is the price you pay. No hidden fees, no airport surcharges, no fuel tricks.",
+    title: "Wide selection of vehicles",
+    body: "From economy cars to spacious SUVs, find the perfect fit for your trip.",
   },
   {
-    title: "A fleet you can trust",
-    body: "Every car is regularly serviced, spotless, and fully automatic — ready the moment you are.",
+    title: "24/7 customer support",
+    body: "Our team is always on hand, day or night, wherever you are in Cyprus.",
   },
   {
-    title: "Insurance included",
-    body: "Comprehensive cover comes standard on every rental, with a zero-excess upgrade available.",
+    title: "Convenient locations",
+    body: "Easy pickup and drop-off across Larnaca, Nicosia, Paphos, Ayia Napa, and Limassol.",
   },
   {
-    title: "Real 24/7 support",
-    body: "A real person on the line whenever you need us — before, during, and after your trip.",
+    title: "Local expertise",
+    body: "As a Cyprus-based company, we know the island — and it shows in the service we provide.",
   },
 ];
 
@@ -42,14 +42,18 @@ export default function AboutPage() {
             About Al Hadana
           </span>
           <h1 className="mt-7 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
-            <span className="text-gradient-light">Car rental, </span>
-            <span className="text-gradient-gold">without the hassle.</span>
+            <span className="text-gradient-light">Your local car rental </span>
+            <span className="text-gradient-gold">company in Cyprus.</span>
           </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-            Al Hadana Company Ltd makes renting a car simple and honest. A clean,
-            fully automatic fleet — from economy runabouts to premium SUVs and
-            convertibles — with transparent pricing, insurance included, and a
-            team that actually answers the phone.
+          <p className="mx-auto mt-5 text-xs font-medium uppercase tracking-[0.22em] text-gold">
+            Larnaca Airport &amp; City · Nicosia · Paphos · Ayia Napa · Limassol
+          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg">
+            At Al Hadana, we&apos;re committed to making car rental across Cyprus
+            simple, reliable, and stress-free. From the moment you land to the
+            moment you depart, our quality vehicles and friendly, dedicated team
+            ensure every journey — business or holiday — is smooth and
+            comfortable.
           </p>
         </section>
 
@@ -81,7 +85,7 @@ export default function AboutPage() {
         {/* Values */}
         <section className="mx-auto mt-14 max-w-7xl px-5 sm:px-8">
           <h2 className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-            What sets us apart
+            Why travelers choose us
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((p) => (

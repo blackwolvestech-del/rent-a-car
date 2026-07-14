@@ -7,11 +7,12 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { MapPin, CalendarDays, Car, Search } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { pickupLocations } from "@/lib/site";
 
 const schema = z
   .object({
     pickup: z.string().min(2, "Required"),
-    dropoff: z.string().min(2, "Required"),
+    dropoff: z.string(),
     pickupDate: z.string().min(1, "Required"),
     returnDate: z.string().min(1, "Required"),
     vehicleType: z.string().min(1, "Required"),
@@ -33,7 +34,7 @@ export function BookingWidget() {
     formState: { errors },
   } = useForm<BookingForm>({
     resolver: zodResolver(schema),
-    defaultValues: { vehicleType: "" },
+    defaultValues: { pickup: pickupLocations[0], dropoff: "", vehicleType: "" },
   });
 
   const router = useRouter();
@@ -62,7 +63,13 @@ export function BookingWidget() {
           label="Pickup Location"
           error={errors.pickup?.message}
         >
-          <input className={fieldBase} placeholder="City, airport…" {...register("pickup")} />
+          <select className={`${fieldBase} [&>option]:bg-[#151515]`} {...register("pickup")}>
+            {pickupLocations.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+          </select>
         </Field>
 
         <Field
@@ -70,7 +77,14 @@ export function BookingWidget() {
           label="Drop-off Location"
           error={errors.dropoff?.message}
         >
-          <input className={fieldBase} placeholder="Same as pickup" {...register("dropoff")} />
+          <select className={`${fieldBase} [&>option]:bg-[#151515]`} {...register("dropoff")}>
+            <option value="">Same as pickup</option>
+            {pickupLocations.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+          </select>
         </Field>
 
         <Field

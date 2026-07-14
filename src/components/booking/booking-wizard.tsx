@@ -30,6 +30,7 @@ import {
   daysBetween,
 } from "@/lib/vehicles";
 import { formatCurrency, cn } from "@/lib/utils";
+import { pickupLocations, VAT_RATE } from "@/lib/site";
 
 interface Props {
   vehicle: Vehicle;
@@ -72,14 +73,13 @@ export function BookingWizard({
   const [step, setStep] = useState(1);
   const [pickup, setPickup] = useState(defaultStart);
   const [dropoff, setDropoff] = useState(defaultEnd);
-  const [pickupLocation, setPickupLocation] = useState("Dublin Airport (DUB)");
-  const [dropoffLocation, setDropoffLocation] =
-    useState("Dublin Airport (DUB)");
+  const [pickupLocation, setPickupLocation] = useState<string>(LOCATIONS[0]);
+  const [dropoffLocation, setDropoffLocation] = useState<string>(LOCATIONS[0]);
   const [customer, setCustomer] = useState<Customer>({
     fullName: "",
     email: "",
     phone: "",
-    country: "Ireland",
+    country: "Cyprus",
     licenceNumber: "",
     licenceExpiry: "",
     address: "",
@@ -87,6 +87,7 @@ export function BookingWizard({
     postalCode: "",
   });
   const [licenceFile, setLicenceFile] = useState<File | null>(null);
+  const [passportFile, setPassportFile] = useState<File | null>(null);
   const [idFile, setIdFile] = useState<File | null>(null);
   const [selectedExtras, setSelectedExtras] = useState<Set<string>>(new Set());
   const [promo, setPromo] = useState("");
@@ -100,7 +101,7 @@ export function BookingWizard({
     0
   );
   const preTax = subtotal + extrasTotal - promoApplied;
-  const tax = Math.round(preTax * 0.13);
+  const tax = Math.round(preTax * VAT_RATE);
   const total = preTax + tax;
 
   const canAdvance = (() => {
@@ -179,8 +180,10 @@ export function BookingWizard({
                     setCustomer((c) => ({ ...c, ...patch }))
                   }
                   licenceFile={licenceFile}
+                  passportFile={passportFile}
                   idFile={idFile}
                   onLicenceFile={setLicenceFile}
+                  onPassportFile={setPassportFile}
                   onIdFile={setIdFile}
                 />
               )}
@@ -429,13 +432,7 @@ function StepDates({
   );
 }
 
-const LOCATIONS = [
-  "Dublin Airport (DUB)",
-  "Dublin City Centre",
-  "Cork Airport (ORK)",
-  "Shannon Airport (SNN)",
-  "Belfast International (BFS)",
-];
+const LOCATIONS = pickupLocations;
 
 // ════════════════════════════════════════════════════════════════════════════
 // Step 2 — Driver / customer info
@@ -445,28 +442,32 @@ function StepDriver({
   customer,
   onChange,
   licenceFile,
+  passportFile,
   idFile,
   onLicenceFile,
+  onPassportFile,
   onIdFile,
 }: {
   customer: Customer;
   onChange: (patch: Partial<Customer>) => void;
   licenceFile: File | null;
+  passportFile: File | null;
   idFile: File | null;
   onLicenceFile: (f: File | null) => void;
+  onPassportFile: (f: File | null) => void;
   onIdFile: (f: File | null) => void;
 }) {
   return (
     <Panel
       title="Driver details"
-      subtitle="The licence holder picking up the car."
+      subtitle="The licence holder picking up the car. Passport, driving licence, and ID card are required at pickup."
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Full name" full>
           <input
             value={customer.fullName}
             onChange={(e) => onChange({ fullName: e.target.value })}
-            placeholder="Aoife O'Connor"
+            placeholder="Your full name"
             className="input"
             autoComplete="name"
           />
@@ -486,7 +487,7 @@ function StepDriver({
             type="tel"
             value={customer.phone}
             onChange={(e) => onChange({ phone: e.target.value })}
-            placeholder="+353 …"
+            placeholder="+357 …"
             className="input"
             autoComplete="tel"
           />
@@ -540,7 +541,7 @@ function StepDriver({
         </Field>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
         <FileDrop
           label="Driving licence"
           hint="Front side photo or scan"
@@ -548,8 +549,14 @@ function StepDriver({
           onFile={onLicenceFile}
         />
         <FileDrop
-          label="Passport / ID"
+          label="Passport"
           hint="Photo page"
+          file={passportFile}
+          onFile={onPassportFile}
+        />
+        <FileDrop
+          label="ID card"
+          hint="Front side photo or scan"
           file={idFile}
           onFile={onIdFile}
         />
@@ -849,8 +856,7 @@ function StepPayment({ total }: { total: number }) {
         <span>
           You will be charged{" "}
           <strong className="text-text">{formatCurrency(total)}</strong> to
-          confirm this booking. A refundable €5,000 hold will be placed on
-          pickup.
+          confirm this booking. Prices include 19% VAT.
         </span>
       </div>
 
@@ -940,8 +946,7 @@ function Summary({
         {promoApplied > 0 && (
           <SumRow k="Promo" v={`− ${formatCurrency(promoApplied)}`} gold />
         )}
-        <SumRow k="VAT (13%)" v={formatCurrency(tax)} />
-        <SumRow k="Deposit (refundable)" v={formatCurrency(5000)} muted />
+        <SumRow k="VAT (19%)" v={formatCurrency(tax)} />
 
         <div className="mt-3 flex items-end justify-between border-t border-white/[0.07] pt-4">
           <span className="text-xs uppercase tracking-[0.22em] text-muted">
@@ -1137,7 +1142,7 @@ function prettyDate(iso: string) {
   if (!iso) return "—";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return "—";
-  return d.toLocaleDateString("en-IE", {
+  return d.toLocaleDateString("en-GB", {
     weekday: "short",
     day: "numeric",
     month: "short",

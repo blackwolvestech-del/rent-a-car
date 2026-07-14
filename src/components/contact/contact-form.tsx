@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Check } from "lucide-react";
+import { site } from "@/lib/site";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -35,8 +36,8 @@ export function ContactForm() {
               Message received.
             </h2>
             <p className="mt-3 max-w-sm text-sm text-muted">
-              A concierge will reply within the hour. If it&apos;s urgent, call
-              +353 1 555 0142 — someone is always on shift.
+              We&apos;ll reply within the hour. If it&apos;s urgent, call{" "}
+              {site.phone} — someone is always on shift.
             </p>
           </motion.div>
         ) : (
@@ -51,7 +52,7 @@ export function ContactForm() {
             <Field label="Your name" full>
               <input
                 required
-                placeholder="Aoife O'Connor"
+                placeholder="Your full name"
                 className="input"
                 autoComplete="name"
               />
@@ -60,7 +61,7 @@ export function ContactForm() {
               <input
                 required
                 type="email"
-                placeholder="aoife@example.com"
+                placeholder="you@example.com"
                 className="input"
                 autoComplete="email"
               />
@@ -68,7 +69,7 @@ export function ContactForm() {
             <Field label="Phone">
               <input
                 type="tel"
-                placeholder="+353…"
+                placeholder="+357…"
                 className="input"
                 autoComplete="tel"
               />

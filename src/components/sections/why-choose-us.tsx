@@ -3,30 +3,30 @@
 import { motion } from "framer-motion";
 import {
   Headphones,
-  ShieldCheck,
-  Infinity as InfinityIcon,
+  CalendarRange,
   Plane,
   Cog,
   Tag,
+  Wrench,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const FEATURES = [
-  { icon: Headphones, title: "24/7 Support", text: "A real person on the line whenever you need us — before, during, and after your rental." },
-  { icon: ShieldCheck, title: "Insurance Included", text: "Comprehensive cover on every booking, with a zero-excess upgrade available." },
-  { icon: InfinityIcon, title: "Unlimited Mileage", text: "No per-kilometre charges. Drive as far as the road takes you." },
-  { icon: Plane, title: "Airport Pickup", text: "Your car waiting at the terminal, or delivered wherever you need it." },
+  { icon: Plane, title: "Airport Convenience", text: "Minutes from Larnaca Airport, with fast pickup and drop-off so your trip starts the moment you land." },
+  { icon: Tag, title: "Transparent Pricing", text: "No hidden fees, no last-minute surprises — the price you see is the price you pay." },
+  { icon: Wrench, title: "Well-Maintained Fleet", text: "Every vehicle is regularly serviced, cleaned, and inspected before it reaches you." },
+  { icon: CalendarRange, title: "Flexible Rental Options", text: "Daily, weekly, or long-term rentals tailored to your travel plans." },
+  { icon: Headphones, title: "24/7 Support", text: "Real help, whenever you need it, throughout your rental period." },
   { icon: Cog, title: "All Automatic", text: "Every car in the fleet is automatic — easy, comfortable, stress-free driving." },
-  { icon: Tag, title: "No Hidden Charges", text: "The price you see is the price you pay. Transparent, to the cent." },
 ];
 
 export function WhyChooseUs() {
   return (
     <section id="why" className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
       <SectionHeading
-        eyebrow="Why Al Hadana"
-        title="Renting made effortless"
-        description="The details others overlook are the standard we start from."
+        eyebrow="Why Choose Al Hadana"
+        title="The smart way to rent a car in Cyprus"
+        description="Renting a car near Larnaca Airport should be simple — and with Al Hadana, it is. We combine reliable service, honest pricing, and a well-maintained fleet to get you on the road fast, with zero hassle."
       />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

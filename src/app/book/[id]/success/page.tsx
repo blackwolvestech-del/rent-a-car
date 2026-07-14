@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ConfettiBurst } from "@/components/booking/confetti-burst";
 import { formatCurrency } from "@/lib/utils";
+import { site } from "@/lib/site";
 
 interface Params {
   params: Promise<{ id: string }>;
@@ -100,7 +101,7 @@ export default async function SuccessPage({ params, searchParams }: Params) {
               <Detail
                 icon={<Phone className="h-4 w-4" />}
                 label="24/7 support"
-                value="+353 1 555 0142"
+                value={site.phone}
               />
             </div>
 
